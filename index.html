@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stone Paper Scissor</title>
+    <link rel="stylesheet" href="y.css" />
+  </head>
+
+  <body class="Body-property">
+    <h1 style="font-size: 10vw; ">Stone Paper Scissor Game</h1>
+    <div id="container">
+      <button
+        id="stone"
+        class="btn"
+        onclick="console.log('you are selected STONE');
+        getcompnum();
+        display_result_for_stone();
+        alert_on_display();
+        "
+      >
+        Stone
+      </button>
+      <button
+        id="paper"
+        class="btn"
+        onclick="console.log('you are selected PAPER');
+        getcompnum();
+        display_result_for_paper();
+        alert_on_display();"
+      >
+        Paper
+      </button>
+      <button
+        id="scissor"
+        class="btn"
+        onclick="console.log('you are selected SCISSOR');
+        getcompnum();
+        display_result_for_scissor();
+        alert_on_display();
+        "
+      >
+        Scissor
+      </button>
+    </div>
+    <h1></h1>
+    <script>
+      let compnum;
+      let result;
+      function getcompnum() {
+        let randnum1 = Math.random() * 3;
+        if (randnum1 <= 3 && randnum1 > 2) {
+          compnum = "Scissor";
+        } else if (randnum1 <= 2 && randnum1 > 1) {
+          compnum = "Paper";
+        } else if( randnum1 <= 1 && randnum1 >= 0)
+        {
+          compnum = "Stone";
+        }
+      }
+      function display_result_for_stone() {
+        if (compnum === "Stone") {
+          result = "Draw";
+        } else if (compnum === "Paper") {
+          result = "Computer win";
+        } else {
+          result = "You win";
+        }
+      }
+      function display_result_for_paper() {
+        if (compnum === "Stone") {
+          result = "You win";
+        } else if (compnum === "Paper") {
+          result = "Draw";
+        } else {
+          result = "Computer win";
+        }
+      }
+      function display_result_for_scissor() {
+        if (compnum === "Stone") {
+          result = "Computer win";
+        } else if (compnum === "Paper") {
+          result = "You win";
+        } else {
+          result = "Draw";
+        }
+      }
+      function alert_on_display() {
+        alert(`Computer choose ${compnum} 
+        and ${result}`);
+      };
+    </script>
+  </body>
+</html>
