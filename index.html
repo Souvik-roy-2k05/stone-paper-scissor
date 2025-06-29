@@ -12,6 +12,7 @@
         id="stone"
         class="btn"
         onclick="console.log('you are selected STONE');
+        usernum = 'Stone';
         getcompnum();
         display_result_for_stone();
         alert_on_display();
@@ -23,6 +24,7 @@
         id="paper"
         class="btn"
         onclick="console.log('you are selected PAPER');
+        usernum = 'Paper';
         getcompnum();
         display_result_for_paper();
         alert_on_display();"
@@ -33,6 +35,7 @@
         id="scissor"
         class="btn"
         onclick="console.log('you are selected SCISSOR');
+        usernum = 'Scissor';
         getcompnum();
         display_result_for_scissor();
         alert_on_display();
@@ -45,6 +48,7 @@
     <script>
       let compnum;
       let result;
+      let usernum;
       function getcompnum() {
         let randnum1 = Math.random() * 3;
         if (randnum1 <= 3 && randnum1 > 2) {
@@ -58,18 +62,18 @@
       }
       function display_result_for_stone() {
         if (compnum === "Stone") {
-          result = "Draw";
+          result = "Draw🤝";
         } else if (compnum === "Paper") {
           result = "Computer win";
         } else {
-          result = "You win";
+          result = "You win🎉";
         }
       }
       function display_result_for_paper() {
         if (compnum === "Stone") {
-          result = "You win";
+          result = "You win🎉";
         } else if (compnum === "Paper") {
-          result = "Draw";
+          result = "Draw🤝";
         } else {
           result = "Computer win";
         }
@@ -78,14 +82,15 @@
         if (compnum === "Stone") {
           result = "Computer win";
         } else if (compnum === "Paper") {
-          result = "You win";
+          result = "You win🎉";
         } else {
-          result = "Draw";
+          result = "Draw🤝";
         }
       }
       function alert_on_display() {
-        alert(`Computer choose ${compnum} 
-        and ${result}`);
+        alert(`You choose: ${usernum}
+Computer choose : ${compnum} 
+${result}`);
       };
     </script>
   </body>
